@@ -1,0 +1,14 @@
+[core]
+	repositoryformatversion = 0
+	filemode = true
+	bare = false
+	logallrefupdates = true
+[remote "origin"]
+	url = https://github.com/Said-Barokah/desa-bancang-web.git
+	fetch = +refs/heads/*:refs/remotes/origin/*
+[remote "heroku"]
+	url = https://git.heroku.com/bancang-website.git
+	fetch = +refs/heads/*:refs/remotes/heroku/*
+[branch "main"]
+	remote = origin
+	merge = refs/heads/main
