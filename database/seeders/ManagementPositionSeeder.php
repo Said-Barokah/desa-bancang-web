@@ -15,11 +15,12 @@ class ManagementPositionSeeder extends Seeder
      */
     public function run()
     {
-        $positions=['Ketua Pengurus','Wakil Pengurus','Sekretaris Pengurus','Anggota'];
-        foreach ($positions as $position) {
-            ManagementPosition::create([
-                'position'=> $position
-            ]);
-        }
+        $management_positions = array(
+            array('id' => '1','position' => 'Ketua Pengurus','created_at' => '2022-07-17 05:06:22','updated_at' => '2022-07-17 05:06:22'),
+            array('id' => '2','position' => 'Wakil Pengurus','created_at' => '2022-07-17 05:06:22','updated_at' => '2022-07-17 05:06:22'),
+            array('id' => '3','position' => 'Sekretaris Pengurus','created_at' => '2022-07-17 05:06:22','updated_at' => '2022-07-17 05:06:22'),
+            array('id' => '4','position' => 'Anggota','created_at' => '2022-07-17 05:06:22','updated_at' => '2022-07-17 05:06:22')
+          );
+        ManagementPosition::insert($management_positions);
     }
 }

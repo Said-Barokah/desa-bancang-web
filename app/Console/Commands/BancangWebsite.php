@@ -1,0 +1,38 @@
+<?php
+
+namespace App\Console\Commands;
+
+use Illuminate\Console\Command;
+use Illuminate\Support\Facades\DB;
+
+class BancangWebsite extends Command
+{
+    /**
+     * The name and signature of the console command.
+     *
+     * @var string
+     */
+    protected $signature = 'import:area';
+
+    /**
+     * The console command description.
+     *
+     * @var string
+     */
+    protected $description = 'import database bancang website';
+
+    /**
+     * Execute the console command.
+     *
+     * @return int
+     */
+    public function handle()
+    {
+        try {
+            DB::unprepared(file_get_contents('database/migrations/bancang_website.sql'));
+        }
+        catch(\Exception $e){
+            var_dump($e->getMessage());
+        }
+    }
+}
